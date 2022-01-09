@@ -19,10 +19,13 @@ app.use(express.json());
 PlaceRoute = require("./routes/placesroute");
 CommentRoute = require("./routes/commentRoute");
 RatingRoute = require("./routes/ratingRoute");
+UserRoute = require("./routes/authRoute")
 
 app.use('/api/comment', CommentRoute);
 app.use('/api/place', PlaceRoute);
 app.use('/api/rating', RatingRoute);
+app.use('/api/auth', UserRoute);
+
 
 const DB_URI = "mongodb://localhost:27017/tourist_site";
 mongoose.connect(DB_URI,{

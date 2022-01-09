@@ -1,22 +1,28 @@
-const mongoose = require ('mongoose');
-
-
-const StudentSchema =mongoose.Schema({
-    _id: mongoose.Schema.Types.ObjectId,
+const mongoose = require('mongoose');
+const userSchema =  mongoose.Schema({
+    _id:mongoose.Schema.Types.ObjectId,
     username:{
-        type: String,
-        required: true
+        type:String,
+        lowercase:true,
+        require:true
+
     },
     email:{
         type:String,
-        required: false
+        lowercase:true,
+        require:true,
+
     },
     password:{
-        type: String,
-        required: true
+        type:String,
+        require:true
+    },
+    token:{
+        type:String,
+        require:false
+
     }
     
 });
+module.exports=mongoose.model('User',userSchema);
 
-
-module.exports = mongoose.model("User", StudentSchema);
