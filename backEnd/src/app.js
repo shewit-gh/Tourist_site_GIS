@@ -27,14 +27,14 @@ app.use('/api/rating', RatingRoute);
 app.use('/api/auth', UserRoute);
 
 
-const DB_URI = "mongodb://localhost:27017/tourist_site";
-mongoose.connect(DB_URI,{
+const DB_URI = "mongodb+srv://webgis:webgis@webgis.pqnpp.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(DB_URI, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-}).then(()=>{
+}).then(() => {
   app.listen(port, () => {
     console.log(`listening on port ${port}!`)
   });
-}).catch(err=>{
+}).catch(err => {
   console.log("database connection failed \n" + err);
 })

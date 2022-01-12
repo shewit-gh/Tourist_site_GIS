@@ -3,29 +3,31 @@ const mongoose = require("mongoose");
 const PlacesSchema = mongoose.Schema({
     _id: mongoose.Schema.Types.ObjectId,
 
-    name:{
+    name: {
         type: String,
         required: true
     },
-    subcity:{
+    subcity: {
         type: String,
         required: true
     },
-    description:{
+    description: {
         type: String,
         required: true
     },
-    location:{
-        type: String,
-        required:false
-    },
+    image: [
+        {
+            type: String,
+            required: false
+        }
+    ],
     ratings: [
         {
-          type: mongoose.Schema.Types.ObjectId,
-          ref: "Rating",
-          required: false,
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Rating",
+            required: false,
         },
-      ],
+    ],
 
 });
 
